@@ -12,4 +12,4 @@ build:
  - uses: actions/upload-artifact@v2
    with:
      name: package
-     path: frontend/build
+     path: frontend/build 
