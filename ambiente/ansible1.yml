@@ -1,11 +1,12 @@
-name: Ansible
+---
+- name: Testa os managed nodes
+  hosts: localhost
 
-on:
-  workflow_dispatch
-
-jobs:
-  ansible-version:
-   runs-on: ubuntu-latest
-   steps:
-   - uses: actions/checkout@v2    
-   - run: ansible-playbook ambiente/ansible.yml
+  tasks:
+    - name: executa ping 
+      ping:
+      register: resultado
+      
+    - name: exibe resultado
+      debug: 
+        msg: "{{ resultado }}"
